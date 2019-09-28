@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 How to run the program?\
+One command line argument (1 to 5) are needed to start the program to indicate which server will be connected to. \
+\
+Package name: cs6500_project3\
+Remote interface: Query\
+Remote object: QueryRemote\
+\
+If run the program with Mac:\
+step1: $ javac *.java       ---compile java files\
+step2:  rmic cs6650_project3.QueryRemote \
+step3: add java.policy file in the package (already added):\
+grant \{\
+  permission java.security.AllPermission;\
+\};\
+step4: open Server (pass 1 to 5 as command line argument):\
+java -Djava.security.policy=java.policy cs6650_project3.Server 1\
+java -Djava.security.policy=java.policy cs6650_project3.Server 2 \
+java -Djava.security.policy=java.policy cs6650_project3.Server 3\
+java -Djava.security.policy=java.policy cs6650_project3.Server 4\
+java -Djava.security.policy=java.policy cs6650_project3.Server 5 \
+step5: open Client (support multiple clients):\
+Such as:\
+java cs6650_project3.Client 1\
+java cs6650_project3.Client 4\
+}
